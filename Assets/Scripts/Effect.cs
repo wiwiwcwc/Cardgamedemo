@@ -6,12 +6,34 @@ public class Effect : MonoBehaviour {
 
     GameObject target;
 
+    public void dealdamage(int damage)
+    {
+        target = GameObject.Find("Enemy");
+
+        if (damage >= 0)
+        {
+            target.GetComponent<Health>().Currenthealth -= damage;
+        }
+
+
+    }
+
+
     public void triggereffect()
     {
-        Debug.Log("" + this.gameObject.name + "effects has triggered");
-        target = GameObject.Find("Enemy");
-        target.GetComponent<Health>().Currenthealth -= 5;
+        var stats = this.transform.GetComponent<Stats>();
+        var mana = GameObject.Find("Mana").GetComponent<Manamanager>();
+
+        if (stats.cost <= mana.CurrentMana)
+        {
+            Debug.Log("" + this.gameObject.name + "effects has triggered");
+            dealdamage(5);
+            mana.CurrentMana -= stats.cost;
+        }
     }
+
+
+
 
 	// Use this for initialization
 	void Start () {

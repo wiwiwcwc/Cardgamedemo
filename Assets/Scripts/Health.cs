@@ -7,6 +7,9 @@ public class Health : MonoBehaviour {
     public  int Maxhealth;
     public  int Currenthealth;
 
+
+
+
 	// Use this for initialization
 	void Start () {
 

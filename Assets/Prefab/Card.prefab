@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 222984080199353404}
   - component: {fileID: 114153807006600404}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33616eb04da3dbd4cb561d08d8096dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  name: 
-  description: 
+  cost: 1
+  name: Tang Wence
+  description: Father of all cards
 --- !u!114 &114178526827366764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +427,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.123, y: -9.5125}
-  m_SizeDelta: {x: 74.235, y: 19.02}
+  m_AnchoredPosition: {x: -38.98, y: -9.5112}
+  m_SizeDelta: {x: 70.51, y: 19.022}
   m_Pivot: {x: 0.5, y: 0.5}
