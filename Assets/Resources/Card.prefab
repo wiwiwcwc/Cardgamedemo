@@ -146,9 +146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33616eb04da3dbd4cb561d08d8096dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
-  name: Tang Wence
-  description: Father of all cards
+  card: {fileID: 0}
+  cost: 2
+  name: Execute
+  carddescription: 20 damage, cost 0 under 30%
+  attackdamage: 0
+  costText: {fileID: 0}
+  nameText: {fileID: 0}
+  carddescriptionText: {fileID: 0}
 --- !u!114 &114178526827366764
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -27,7 +27,7 @@ public class Effect : MonoBehaviour {
         if (stats.cost <= mana.CurrentMana)
         {
             Debug.Log("" + this.gameObject.name + "effects has triggered");
-            dealdamage(5);
+            dealdamage(stats.attackdamage);
             mana.CurrentMana -= stats.cost;
         }
     }
