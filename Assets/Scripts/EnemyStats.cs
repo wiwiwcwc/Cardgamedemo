@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class EnemyStats : MonoBehaviour {
 
-    public  int Maxhealth;
-    public  int Currenthealth;
+    public int Maxhealth;
+    public int Currenthealth;
+    public List<int> damage = new List<int>(new int[]{2,4,6} );
 
 
 

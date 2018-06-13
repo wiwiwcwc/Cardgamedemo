@@ -11,14 +11,17 @@ public class UpdateHealthText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        var health = this.transform.parent.GetComponent<Health>();
+        var health = this.transform.parent.GetComponent<EnemyStats>();
+
+
+
         this.transform.GetComponent<Text>().text = health.Currenthealth+"/"+health.Maxhealth;
 
     }
 
     // Update is called once per frame
     void Update () {
-        var health = this.transform.parent.GetComponent<Health>();
+        var health = this.transform.parent.GetComponent<EnemyStats>();
         this.transform.GetComponent<Text>().text = health.Currenthealth + "/" + health.Maxhealth;
 
     }

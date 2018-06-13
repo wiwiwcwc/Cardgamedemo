@@ -6,13 +6,13 @@ public class Effect : MonoBehaviour {
 
     GameObject target;
 
-    public void dealdamage(int damage)
+    public void Dealdamage(int damage)
     {
         target = GameObject.Find("Enemy");
 
         if (damage >= 0)
         {
-            target.GetComponent<Health>().Currenthealth -= damage;
+            target.GetComponent<EnemyStats>().Currenthealth -= damage;
         }
 
 
@@ -26,10 +26,17 @@ public class Effect : MonoBehaviour {
 
         if (stats.cost <= mana.CurrentMana)
         {
-            Debug.Log("" + this.gameObject.name + "effects has triggered");
-            dealdamage(stats.attackdamage);
+            //Debug.Log("" + this.gameObject.name + "effects has triggered");
+            Dealdamage(stats.attackdamage);
             mana.CurrentMana -= stats.cost;
         }
+        //触发完就送入坟场
+        // Destroy(this.transform.parent);
+        var graveyard = GameObject.Find("Graveyard").GetComponent<Graveyardlist>();
+        
+        graveyard.graveyardlist.Add(Instantiate(this.gameObject));
+        Destroy(this.gameObject);
+
     }
 
 

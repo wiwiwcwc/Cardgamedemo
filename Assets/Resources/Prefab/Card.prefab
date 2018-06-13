@@ -149,7 +149,7 @@ MonoBehaviour:
   card: {fileID: 0}
   cost: 2
   name: Execute
-  carddescription: 20 damage, cost 0 under 30%
+  carddescription: 
   attackdamage: 0
   costText: {fileID: 0}
   nameText: {fileID: 0}

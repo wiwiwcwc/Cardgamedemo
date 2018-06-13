@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public int Maxhealth;
+    public int Currenthealth;
+
+    public void Takedamage(int damage){
+        if (damage >= 0)
+        {
+            Currenthealth -= damage;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
+        Currenthealth = Maxhealth;
 	}
 	
 	// Update is called once per frame

@@ -6,6 +6,15 @@ public class TurnManager : MonoBehaviour {
 
     public int turncount = 1;
 
+
+    public void EndTurn()
+    {
+        var mana = GameObject.Find("Mana").GetComponent<Manamanager>();
+        turncount++;
+        mana.CurrentMana = mana.MaxMana;
+        GameObject.Find("Deck").GetComponent<Decklist>().Draw();
+    }
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,8 +25,7 @@ public class TurnManager : MonoBehaviour {
         var mana = GameObject.Find("Mana").GetComponent<Manamanager>();
         if (mana.CurrentMana== 0)
         {
-            mana.CurrentMana = mana.MaxMana;
-            turncount++;
+            EndTurn();
         }
     }
 }
