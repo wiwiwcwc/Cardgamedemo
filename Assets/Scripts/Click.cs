@@ -8,6 +8,6 @@ public class Click : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         //Debug.Log("" + this.gameObject.name);
-        this.GetComponent<Effect>().triggereffect();
+        this.GetComponent<Effect>().Triggereffect();
     }
 }

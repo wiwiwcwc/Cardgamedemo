@@ -24,33 +24,38 @@ public class Decklist : MonoBehaviour {
             GameObject card = Instantiate(deck[0]);
             card.transform.SetParent(GameObject.Find("Hand").transform);
             deck.Remove(cardtoberemoved);
-            Destroy(cardtoberemoved);    //
+            Destroy(cardtoberemoved);    
         }
         else
         {
-            Shuffle();
+            Shuffle();   //如果卡组没牌就洗牌
              
         }
     }
 
     public void Shuffle() {
-        var gyl = GameObject.Find("Graveyard").GetComponent<Graveyardlist>().graveyardlist;
-        deck.AddRange(gyl);
-        gyl.Clear();
-        Draw();
+        var gyl = GameObject.Find("Graveyard").GetComponent<Graveyardlist>().graveyardlist;  //指向到墓地的卡婊
+        if (gyl.Count() > 0)    // 墓地没卡就不洗了
+        {
+
+
+            deck.AddRange(gyl);
+            gyl.Clear();
+            Draw();
+        }
     }
 
 
     // Use this for initialization
     void Start () {
+        Addcard("ShieldUp");
         Addcard("Execute");
         Addcard("MortalStrike");
         Addcard("HeroicStrike");
         Addcard("HeroicStrike");
         Addcard("HeroicStrike");
         Addcard("MortalStrike");
-
-        Debug.Log(deck[0].name);
+        Addcard("ShieldUp");
 
         Draw();
         Draw();

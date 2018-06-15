@@ -2,24 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+// 这个是处理玩家卡片的效果
 public class Effect : MonoBehaviour {
 
     GameObject target;
 
-    public void Dealdamage(int damage)
+    public void Dealdamage(int damage)      // 玩家对怪物造成伤害， 以后要改一下对象
     {
-        target = GameObject.Find("Enemy");
-
-        if (damage >= 0)
+        var stats = this.gameObject.GetComponent<Stats>();
+        if (stats.aoe == false)
         {
-            target.GetComponent<EnemyStats>().Currenthealth -= damage;
-        }
 
+
+            target = GameObject.Find("Enemy");
+
+            if (damage >= 0)
+            {
+                target.GetComponent<EnemyStats>().Currenthealth -= damage;
+            }
+        }
+        else
+        {
+           var targets = GameObject.FindGameObjectsWithTag("Enemy");
+           Debug.Log(targets);
+            
+
+        }
+    }
+
+    public void Increasearmor(int armor)
+    {
+        target = GameObject.Find("Player");
+
+        if (armor >= 0)
+        {
+            target.GetComponent<PlayerStats>().armor += armor;
+        }
 
     }
 
 
-    public void triggereffect()
+    public void Triggereffect()        // 点击后的效果
     {
         var stats = this.transform.GetComponent<Stats>();
         var mana = GameObject.Find("Mana").GetComponent<Manamanager>();
@@ -28,10 +53,10 @@ public class Effect : MonoBehaviour {
         {
             //Debug.Log("" + this.gameObject.name + "effects has triggered");
             Dealdamage(stats.attackdamage);
+            Increasearmor(stats.armor);
             mana.CurrentMana -= stats.cost;
         }
         //触发完就送入坟场
-        // Destroy(this.transform.parent);
         var graveyard = GameObject.Find("Graveyard").GetComponent<Graveyardlist>();
         
         graveyard.graveyardlist.Add(Instantiate(this.gameObject));

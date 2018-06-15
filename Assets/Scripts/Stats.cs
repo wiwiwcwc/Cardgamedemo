@@ -10,7 +10,10 @@ public class Stats : MonoBehaviour {
     public int cost ;
     public new string name;
     public string carddescription;
-    public int attackdamage;
+    public int attackdamage = 0;
+    public int armor = 0;
+    public bool aoe = false;
+
 
     public Text costText;
     public Text nameText;
@@ -31,8 +34,5 @@ public class Stats : MonoBehaviour {
          var description = this.transform.Find("Description");
          description.GetComponent<Text>().text = carddescription;
          
-
-
-
     }
 }
