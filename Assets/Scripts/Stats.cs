@@ -13,6 +13,8 @@ public class Stats : MonoBehaviour {
     public int attackdamage = 0;
     public int armor = 0;
     public bool aoe = false;
+    public string spec; 
+    public int carddraw;
 
 
     public Text costText;

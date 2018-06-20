@@ -5,18 +5,21 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("BeginDrag");
     }
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("Drag");
-        this.transform.position = eventData.position;
+       var  temp = this.transform.position;
+        transform.position = Input.mousePosition;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("EndDrag");
+        transform.localPosition = Vector3.zero;
+      //  transform.parent.gameObject.GetComponent<GridLayout>().isActiveAndEnabled();
+
     }
 }
 
