@@ -15,27 +15,18 @@ public class Effect : MonoBehaviour {
         if (stats.aoe == false)
         {
 
-            
-            var targets = GameObject.FindGameObjectsWithTag("Enemy");
 
+            target = GameObject.Find("Enemy");
 
-            if (damage > 0)
+            if (damage >= 0)
             {
-                targets[0].GetComponent<EnemyStats>().Currenthealth -= damage;
-                //targets[0].GetComponent<EnemyStats>().Currenthealth -= damage;
-
+                target.GetComponent<EnemyStats>().Currenthealth -= damage;
             }
         }
         else
         {
            var targets = GameObject.FindGameObjectsWithTag("Enemy");
-            if (damage>0)
-            {
-                foreach  (var target in targets)
-                {
-                    target.GetComponent<EnemyStats>().Currenthealth -= damage;
-                } 
-            }
+           Debug.Log(targets);
             
 
         }
@@ -53,14 +44,6 @@ public class Effect : MonoBehaviour {
     }
 
 
-    //弃牌 还么写好
-    public void Discard(int number)
-    {
-       var hand = GameObject.Find("Player");
-
-    }
-
-
     public void Triggereffect()        // 点击后的效果
     {
         var stats = this.transform.GetComponent<Stats>();
@@ -74,9 +57,10 @@ public class Effect : MonoBehaviour {
             mana.CurrentMana -= stats.cost;
         }
         //触发完就送入坟场
-      
-        var handmanger = GameObject.Find("Hand").GetComponent<HandManager>();
-        handmanger.Discardfromhand(this.gameObject);
+        var graveyard = GameObject.Find("Graveyard").GetComponent<Graveyardlist>();
+        
+        graveyard.graveyardlist.Add(Instantiate(this.gameObject));
+        Destroy(this.gameObject);
 
     }
 
