@@ -34,11 +34,7 @@ public class TurnManager : MonoBehaviour {
         
         mana.CurrentMana = mana.MaxMana;
 <<<<<<< HEAD
-<<<<<<< HEAD
         GameObject.Find("Deck").GetComponent<Decklist>().Draw(player.carddraw);
-=======
-        GameObject.Find("Deck").GetComponent<Decklist>().Draw();
->>>>>>> b9b8df1192f18a6248e45c5e728de3b630c1d012
 =======
         GameObject.Find("Deck").GetComponent<Decklist>().Draw();
 >>>>>>> b9b8df1192f18a6248e45c5e728de3b630c1d012

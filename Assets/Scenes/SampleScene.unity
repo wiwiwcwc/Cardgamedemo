@@ -1913,7 +1913,6 @@ MonoBehaviour:
   remainingCards: 0
   deck: []
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &1246607243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,8 +1974,6 @@ MonoBehaviour:
   healthtext: {fileID: 564439618}
   nametext: {fileID: 0}
   armortext: {fileID: 233887447}
-=======
->>>>>>> b9b8df1192f18a6248e45c5e728de3b630c1d012
 =======
 >>>>>>> b9b8df1192f18a6248e45c5e728de3b630c1d012
 --- !u!1 &1266805924
