@@ -21,6 +21,8 @@ public class GameSetup : MonoBehaviour {
     }
 
     void Start () {
+
+
         Decklist decklist0 = player[0].GetComponentInChildren<Decklist>();
         HandManager handmanager0 = player[0].GetComponentInChildren<HandManager>();
         Stats stats0 = player[0].GetComponentInChildren<Stats>();
@@ -31,6 +33,8 @@ public class GameSetup : MonoBehaviour {
         decklist0.Addcard("ShieldUp");
         decklist0.Addcard("Execute");
         decklist0.Addcard("Execute");
+
+       
        // decklist0.Draw(stats0.carddraw);
 
         player[0].SetActive(false);

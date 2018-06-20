@@ -23,7 +23,7 @@ public class EnemyStats : MonoBehaviour {
     {
         int damagewilldeal = damage[(Random.Range(0, damage.Count()))]; //抽一个随机数造成伤害
 
-        var target = GameObject.Find("Player").GetComponent<PlayerStats>();
+        var target = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
         if (damagewilldeal- target.armor>=0)
         {

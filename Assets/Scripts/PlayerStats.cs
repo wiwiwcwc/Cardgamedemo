@@ -9,7 +9,8 @@ public class PlayerStats : MonoBehaviour {
     public int currenthealth;
     public int armor;
     public string playername;
-
+    public string spec;
+    public int carddraw;
 
     public Text healthtext;
     public Text nametext;
